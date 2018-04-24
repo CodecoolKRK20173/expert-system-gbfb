@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Facts>
+    <Fact id="duzy fiat">
+        <Description value="Fiat 125p"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="passat">
+        <Description value="VW Passat B6"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="golf">
+        <Description value="VW Golf III"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="multipla">
+        <Description value="Fiat Multipla"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
     <Fact id="tesla">
-        <Description value="Tesla Model S"/>
+        <Description value="Tesla Roadster"/>
         <Evals>
-            <Eval id="family">true</Eval>
-            <Eval id="money">true</Eval>
-            <Eval id="comfort">false</Eval>
-            <Eval id="luxury">true</Eval>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
-    <Fact id="mokka">
-        <Description value="Opel Mokka"/>
+    <Fact id="panda">
+        <Description value="Fiat Panda"/>
         <Evals>
-            <Eval id="family">true</Eval>
-            <Eval id="money">false</Eval>
-            <Eval id="comfort">false</Eval>
-            <Eval id="luxury">true</Eval>
-        </Evals>
-    </Fact>
-    <Fact id="lada">
-        <Description value="Lada"/>
-        <Evals>
-            <Eval id="family">false</Eval>
-            <Eval id="money">false</Eval>
-            <Eval id="comfort">false</Eval>
-            <Eval id="luxury">false</Eval>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
 </Facts>
