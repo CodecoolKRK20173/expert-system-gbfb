@@ -9,6 +9,17 @@ public class Answer {
         values = new ArrayList<Value>();
     }
 
+    public boolean evaluateAnswerByInput(String userInput) {
+        for (Value value : this.values) {
+            for (String pattern : value.getInputPattern()) {
+                if (userInput.equals(pattern)) {
+                    return value.getSelectionType();
+                }
+            }
+            return false;
+        }
+    }
+
     public void addValue(Value value) {
         values.add(value);
     }
