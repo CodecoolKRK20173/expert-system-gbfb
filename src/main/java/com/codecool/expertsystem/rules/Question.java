@@ -2,9 +2,9 @@ package com.codecool.expertsystem.Question;
 
 public class Question {
 
-    String ID;
-    String question;
-    Answer answer;
+    private String ID;
+    private String question;
+    private Answer answer;
 
     public Question(String ID, String question, Answer answer) {
         this.ID = ID;
