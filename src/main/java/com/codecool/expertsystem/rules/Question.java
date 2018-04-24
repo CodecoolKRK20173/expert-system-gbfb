@@ -11,4 +11,16 @@ public class Question {
         this.question = question;
         this.Answer = answer;
     }
+
+    public String getID() {
+        retutn ID;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public getAnswer() {
+        return answer;
+    }
 }
