@@ -18,7 +18,4 @@ public class FactParser extends XMLParser {
     private void fillFactsRepo() {
 
     }
-
-    public Document
-
 }
