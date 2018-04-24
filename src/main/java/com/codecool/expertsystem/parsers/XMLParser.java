@@ -33,4 +33,6 @@ public abstract class XMLParser {
     public Document getDocument() {
         return this.xmlDocument;
     }
+
+    public abstract void parseDocumentToRepository();
 }
