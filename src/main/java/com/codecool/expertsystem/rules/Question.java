@@ -12,6 +12,10 @@ public class Question {
         this.Answer = answer;
     }
 
+    public boolean getEvaluatedAnswer(String input) {
+        return answer.evaluateAnswerByInput(input);
+    }
+
     public String getId() {
         return Id;
     }
