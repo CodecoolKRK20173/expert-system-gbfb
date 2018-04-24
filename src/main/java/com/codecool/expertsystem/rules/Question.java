@@ -1,19 +1,19 @@
-package com.codecool.expertsystem.Question;
+package com.codecool.expertsystem.rules;
 
 public class Question {
 
-    private String ID;
+    private String Id;
     private String question;
     private Answer answer;
 
-    public Question(String ID, String question, Answer answer) {
-        this.ID = ID;
+    public Question(String Id, String question, Answer answer) {
+        this.Id = Id;
         this.question = question;
         this.Answer = answer;
     }
 
-    public String getID() {
-        retutn ID;
+    public String getId() {
+        retutn Id;
     }
 
     public String getQuestion() {
