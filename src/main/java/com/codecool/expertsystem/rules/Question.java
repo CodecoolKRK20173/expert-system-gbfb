@@ -13,7 +13,7 @@ public class Question {
     }
 
     public String getId() {
-        retutn Id;
+        return Id;
     }
 
     public String getQuestion() {
