@@ -2,7 +2,6 @@ package com.codecool.expertsystem.parsers;
 
 import com.codecool.expertsystem.facts.Fact;
 import com.codecool.expertsystem.repositories.FactRepository;
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -10,10 +9,10 @@ import org.w3c.dom.NodeList;
 
 public class FactParser extends XMLParser {
     FactRepository factsRepo = getFactRepository();
-    NodeList factsList = getDocument().getElementsByTagName("Fact");
 
     public FactParser() {
         loadXmlDocument("facts.xml");
+        parseDocumentToRepository();
     }
 
     public FactRepository getFactRepository() {
@@ -22,35 +21,37 @@ public class FactParser extends XMLParser {
 
     @Override
     public void parseDocumentToRepository() {
+        NodeList factsList = getDocument().getElementsByTagName("Fact");
         String id, description, perk;
         boolean value;
 
         for(int i = 0; i < factsList.getLength(); i++) {
             Node node = factsList.item(i);
-            Element element = (Element) node;
 
-            id = element.getAttribute("id");
-            description = element.getElementsByTagName("Description")
-                                 .item(0)
-                                 .getTextContent();
+            if(node.getNodeType() == Node.ELEMENT_NODE) {
 
-            NodeList evalsList = element.getElementsByTagName("Evals");
+                Element element = (Element) node;
 
-            Fact fact = new Fact(id, description);
+                id = element.getAttribute("id");
+                description = element.getElementsByTagName("Description")
+                                     .item(0)
+                                     .getTextContent();
 
-            for(int j = 0; j < evalsList.getLength(); j++) {
-                Node evalNode = evalsList.item(j);
-                Element evalElement = (Element) evalNode;
+                NodeList evalsList = element.getElementsByTagName("Evals");
 
-                perk = evalElement.getAttribute("id");
-                value = Boolean.parseBoolean(evalElement.getTextContent());
+                Fact fact = new Fact(id, description);
 
-                fact.setFactValueById(perk, value);
-            }
+                for(int j = 0; j < evalsList.getLength(); j++) {
+                    Node evalNode = evalsList.item(j);
+                    Element evalElement = (Element) evalNode;
 
+                    perk = evalElement.getAttribute("id");
+                    value = Boolean.parseBoolean(evalElement.getTextContent());
+
+                    fact.setFactValueById(perk, value);
+                }
             factsRepo.addFact(fact);
-
-
+            }
         }
     }
 
