@@ -26,19 +26,19 @@ public class FactParser extends XMLParser {
         boolean value;
 
         for(int i = 0; i < factsList.getLength(); i++) {
-
             Node node = factsList.item(i);
             Element element = (Element) node;
 
             id = element.getAttribute("id");
-            description = element.getElementsByTagName("Description").item(0).getTextContent();
+            description = element.getElementsByTagName("Description")
+                                 .item(0)
+                                 .getTextContent();
 
             NodeList evalsList = element.getElementsByTagName("Evals");
 
             Fact fact = new Fact(id, description);
 
             for(int j = 0; j < evalsList.getLength(); j++) {
-
                 Node evalNode = evalsList.item(j);
                 Element evalElement = (Element) evalNode;
 
