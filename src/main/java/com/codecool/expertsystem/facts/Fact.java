@@ -14,14 +14,6 @@ public class Fact {
         this.id = id;
         this.description = description;
         this.IdValueMap = new HashMap<>();
-        initIdValueMap();
-    }
-
-    private void initIdValueMap() {
-        String[] ids = {"looks", "speed", "reliability", "janusz"};
-        for (String id : ids) {
-            this.IdValueMap.put(id, false);
-        }
     }
 
     public Set<String> getIdSet() {
@@ -29,11 +21,7 @@ public class Fact {
     }
 
     public void setFactValueById(String id, boolean value) {
-        for (String key : this.IdValueMap.keySet()) {
-            if (key.equals(id)) {
-                this.IdValueMap.put(key, value);
-            }
-        }
+        this.IdValueMap.put(id, value);
     }
 
     public boolean getValueById(String id) {

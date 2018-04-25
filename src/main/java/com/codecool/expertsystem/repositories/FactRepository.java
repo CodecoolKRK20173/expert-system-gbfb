@@ -15,8 +15,8 @@ public class FactRepository {
         this.factIterator = new FactIterator();
     }
 
-    public void addQuestion(Fact fact) {
-        this.repository.put(this.repository.size(), question);
+    public void addFact(Fact fact) {
+        this.repository.put(this.repository.size(), fact);
     }
 
     public Iterator<Fact> getIterator() {
