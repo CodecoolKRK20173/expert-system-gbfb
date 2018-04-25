@@ -1,20 +1,32 @@
-package com.codecool.expertsystem.rules;
+package com.codecool.expertsystem.Question;
 
+import java.util.InputMismatchException;
 import java.util.List;
-import java.util.ArrayList;
 
 public class Answer {
     private List<Value> values;
 
     public Answer() {
-        values = new ArrayList<>();
+        values = new ArrayList<Value>();
+    }
+
+    private String[] splitInput(String userInput) {
+        String[] splittedInput = userInput.split(",");
+        return splittedInput;
     }
 
     public boolean evaluateAnswerByInput(String userInput) {
+        String[] splittedInput = splitInput(userInput);
+
         for (Value value : this.values) {
-            for (String pattern : value.getInputPattern()) {
-                if (userInput.equals(pattern)) {
+            for (String s : splittedInput) {
+                if (value.getInputPattern().contains(s)) {
                     return value.getSelectionType();
+                    }
+                else {
+                    throw new InputMismatchException(e); {
+                        System.out.println("Input pattern mismatch");
+                    }
                 }
             }
         }
@@ -22,7 +34,7 @@ public class Answer {
     }
 
     public void addValue(Value value) {
-        this.values.add(value);
+        values.add(value);
     }
 }
 
