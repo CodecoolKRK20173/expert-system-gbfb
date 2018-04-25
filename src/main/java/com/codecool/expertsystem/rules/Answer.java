@@ -1,12 +1,13 @@
-package com.codecool.expertsystem.Question;
+package com.codecool.expertsystem.rules;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Answer {
     private List<Value> values;
 
     public Answer() {
-        values = new ArrayList<Value>();
+        values = new ArrayList<>();
     }
 
     public boolean evaluateAnswerByInput(String userInput) {
@@ -16,12 +17,12 @@ public class Answer {
                     return value.getSelectionType();
                 }
             }
-            return false;
         }
+        return false;
     }
 
     public void addValue(Value value) {
-        values.add(value);
+        this.values.add(value);
     }
 }
 

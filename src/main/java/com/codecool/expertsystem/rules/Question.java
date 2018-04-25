@@ -1,7 +1,6 @@
 package com.codecool.expertsystem.rules;
 
 public class Question {
-
     private String Id;
     private String question;
     private Answer answer;
@@ -9,22 +8,22 @@ public class Question {
     public Question(String Id, String question, Answer answer) {
         this.Id = Id;
         this.question = question;
-        this.Answer = answer;
+        this.answer = answer;
     }
 
     public boolean getEvaluatedAnswer(String input) {
-        return answer.evaluateAnswerByInput(input);
+        return this.answer.evaluateAnswerByInput(input);
     }
 
     public String getId() {
-        return Id;
+        return this.Id;
     }
 
     public String getQuestion() {
-        return question;
+        return this.question;
     }
 
-    public getAnswer() {
-        return answer;
+    public Answer getAnswer() {
+        return this.answer;
     }
 }
