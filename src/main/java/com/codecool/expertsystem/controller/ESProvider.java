@@ -3,6 +3,12 @@ import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import java.util.Iterator;
+
+import com.codecool.expertsystem.parsers.*;
+import com.codecool.expertsystem.rules.*;
+import com.codecool.expertsystem.facts.*;
+
 public class ESProvider {
     private FactParser factParser;
     private RuleParser ruleParser;
@@ -17,7 +23,7 @@ public class ESProvider {
     public void collectAnswers() {
         this.scanner = new Scanner(System.in);
         this.userAnswers = new HashMap<>();
-        Iterator iterator = this.ruleParser.getRuleRepository().getIterator();
+        Iterator iterator = this.ruleParser.getRepository().getIterator();
 
         while (iterator.hasNext()) {
             Question question = iterator.next();
@@ -40,7 +46,7 @@ public class ESProvider {
     }
 
     public String evaluate() {
-        Iterator iterator = this.factParser.getFactRepository().getIterator();
+        Iterator iterator = this.factParser.getRepository().getIterator();
         while(iterator.hasNext()) {
             Fact fact = iterator.next();
             for (String answerId : this.userAnswers.keySet()) {
