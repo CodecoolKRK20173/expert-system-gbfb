@@ -24,9 +24,7 @@ public class Answer {
                     return value.getSelectionType();
                     }
                 else {
-                    throw new InputMismatchException(e); {
-                        System.out.println("Input pattern mismatch");
-                    }
+                    throw new InputMismatchException("You entered incorrect answer.");
                 }
             }
         }
