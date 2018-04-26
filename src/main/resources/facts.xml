@@ -54,4 +54,94 @@
             <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
+    <Fact id="fabia">
+        <Description value="Skoda Fabia"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="smart">
+        <Description value="Smart"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="astra">
+        <Description value="Opel Astra"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="polo">
+        <Description value="VW Polo"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="enzo">
+        <Description value="Ferrari Enzo"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="tt">
+        <Description value="Audi TT"/>
+        <Evals>
+            <Eval id="looks">false</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="punto">
+        <Description value="Fiat Punto"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="stilo">
+        <Description value="Fiat Stilo"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">false</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="clio">
+        <Description value="Renault Clio"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">false</Eval>
+            <Eval id="reliability">true</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
+    <Fact id="e35">
+        <Description value="BMW E35"/>
+        <Evals>
+            <Eval id="looks">true</Eval>
+            <Eval id="speed">true</Eval>
+            <Eval id="reliability">false</Eval>
+            <Eval id="janusz">true</Eval>
+        </Evals>
+    </Fact>
 </Facts>
