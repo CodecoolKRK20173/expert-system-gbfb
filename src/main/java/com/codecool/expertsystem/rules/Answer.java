@@ -10,6 +10,10 @@ public class Answer {
         values = new ArrayList<>();
     }
 
+    public List<Value> getValues() {
+        return values;
+    }
+
     public boolean evaluateAnswerByInput(String userInput) {
         for (Value value : this.values) {
             for (String pattern : value.getInputPattern()) {
