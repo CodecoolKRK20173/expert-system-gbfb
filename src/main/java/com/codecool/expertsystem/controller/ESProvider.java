@@ -1,66 +1,64 @@
-import java.util.Map;
-import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-import java.util.Iterator;
+package com.codecool.expertsystem.controller;
 
 import com.codecool.expertsystem.parsers.*;
+import com.codecool.expertsystem.repositories.FactRepository;
+import com.codecool.expertsystem.repositories.RuleRepository;
 import com.codecool.expertsystem.rules.*;
 import com.codecool.expertsystem.facts.*;
 
+import java.util.*;
+
 public class ESProvider {
-    private FactParser factParser;
-    private RuleParser ruleParser;
+    private FactRepository factRepository;
+    private RuleRepository ruleRepository;
+
     private Map<String, Boolean> userAnswers;
-    private Scanner scanner;
+
+    private Scanner reader;
 
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
-        this.factParser = factParser;
-        this.ruleParser = ruleParser;
+        this.factRepository = factParser.getRepository();
+        this.ruleRepository = ruleParser.getRepository();
+        this.userAnswers = new HashMap<>();
     }
 
     public void collectAnswers() {
-        this.scanner = new Scanner(System.in);
-        this.userAnswers = new HashMap<>();
-        Iterator iterator = this.ruleParser.getRepository().getIterator();
+        Iterator<Question> questionIterator = this.ruleRepository.getIterator();
 
-        while (iterator.hasNext()) {
-            Question question = iterator.next();
-            while (true) {
-                try {
-                    System.out.println(question.getQuestion());
-                    String input = scanner.nextLine();
-                    Answer answer = question.getEvaluatedAnswerByInput(input);
-                    this.userAnswers.put(question.getId(), answer);
-                    break;
-                } catch (InputMismatchException e) {
-                    System.out.println(e.getMessage());
-                }
+        while (questionIterator.hasNext()) {
+            Question currentQuestion = questionIterator.next();
+
+            this.reader = new Scanner(System.in);
+
+            System.out.println(currentQuestion.getQuestion());
+            String userAnswer = reader.nextLine();
+
+            boolean evaluatedAnswer = currentQuestion.getEvaluatedAnswer(userAnswer);
+
+            this.userAnswers.put(currentQuestion.getId(), evaluatedAnswer);
+        }
+    }
+
+    public void evaluate() {
+        Iterator<Fact> factIterator = this.factRepository.getIterator();
+
+        while (factIterator.hasNext()) {
+            Fact currentlyCheckedFact = factIterator.next();
+            if (testMatch(currentlyCheckedFact)) {
+                System.out.println("You should buy a " + currentlyCheckedFact.getDescription());
             }
         }
     }
 
-    public boolean getAnswerByQuestion(String question) {
+    private boolean testMatch(Fact fact) {
+        Set<String> factValueIdSet = fact.getIdSet();
 
-    }
-
-    public String evaluate() {
-        Iterator iterator = this.factParser.getRepository().getIterator();
-        while(iterator.hasNext()) {
-            Fact fact = iterator.next();
-            for (String answerId : this.userAnswers.keySet()) {
-                for (String factId : fact.getIdSet()) {
-                    if (answerId.equals(factId)) {
-                        if (this.userAnswers.get(answerId) == fact.getValueById(factId)) {
-                            System.out.println("this agrees");
-                        }
-                        else {
-                            System.out.println("this doesn't agree");
-                        }
-                    }
-                }
+        for (String id : factValueIdSet) {
+            if (!this.userAnswers.get(id).equals(fact.getValueById(id))) {
+                return false;
             }
         }
+
+        return true;
     }
 }
