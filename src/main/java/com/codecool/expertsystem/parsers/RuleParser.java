@@ -55,9 +55,9 @@ public class RuleParser extends XMLParser {
                         String valueType = answerValue.getTagName();
 
                         if (valueType.equals("SingleValue")) {
-                            answer.addValue(new SingleValue(answerValue.getTextContent(), selectionValue));
+                            answer.addValue(new SingleValue(answerValue.getAttribute("value"), selectionValue));
                         } else if (valueType.equals("MultipleValue")) {
-                            String[] values = answerValue.getTextContent().split(", ");
+                            String[] values = answerValue.getAttribute("value").split(", ");
                             answer.addValue(new MultipleValue(Arrays.asList(values), selectionValue));
                         }
                     }
