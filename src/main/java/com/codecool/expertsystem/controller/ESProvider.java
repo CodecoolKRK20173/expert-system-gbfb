@@ -5,6 +5,7 @@ import com.codecool.expertsystem.repositories.FactRepository;
 import com.codecool.expertsystem.repositories.RuleRepository;
 import com.codecool.expertsystem.rules.*;
 import com.codecool.expertsystem.facts.*;
+import com.codecool.expertsystem.view.ESView;
 
 import java.util.*;
 
@@ -27,14 +28,10 @@ public class ESProvider {
 
         while (questionIterator.hasNext()) {
             Question currentQuestion = questionIterator.next();
-
             this.reader = new Scanner(System.in);
-
-            System.out.println(currentQuestion.getQuestion());
+            ESView.displayQuestion(currentQuestion);
             String userAnswer = reader.nextLine();
-
             boolean evaluatedAnswer = currentQuestion.getEvaluatedAnswer(userAnswer);
-
             this.userAnswers.put(currentQuestion.getId(), evaluatedAnswer);
         }
     }
