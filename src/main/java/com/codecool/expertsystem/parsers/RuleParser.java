@@ -7,6 +7,7 @@ import com.codecool.expertsystem.rules.Answer;
 import com.codecool.expertsystem.rules.MultipleValue;
 import com.codecool.expertsystem.rules.SingleValue;
 
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Element;
 
@@ -18,6 +19,7 @@ public class RuleParser extends XMLParser {
     public RuleParser() {
         this.repository = new RuleRepository();
         loadXmlDocument("rules.xml");
+        parseDocumentToRepository();
     }
 
     @Override
@@ -47,14 +49,17 @@ public class RuleParser extends XMLParser {
 
                 NodeList answerValues = selection.getChildNodes();
                 for (int k = 0; k < answerValues.getLength(); k++) {
-                    Element answerValue = (Element) answerValues.item(k);
-                    String valueType = answerValue.getTagName();
+                    Node answerNode = answerValues.item(k);
+                    if (answerNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element answerValue = (Element) answerNode;
+                        String valueType = answerValue.getTagName();
 
-                    if (valueType.equals("SingleValue")) {
-                        answer.addValue(new SingleValue(answerValue.getTextContent(), selectionValue));
-                    } else if (valueType.equals("MultipleValue")) {
-                        String[] values = answerValue.getTextContent().split(", ");
-                        answer.addValue(new MultipleValue(Arrays.asList(values), selectionValue));
+                        if (valueType.equals("SingleValue")) {
+                            answer.addValue(new SingleValue(answerValue.getTextContent(), selectionValue));
+                        } else if (valueType.equals("MultipleValue")) {
+                            String[] values = answerValue.getTextContent().split(", ");
+                            answer.addValue(new MultipleValue(Arrays.asList(values), selectionValue));
+                        }
                     }
                 }
             }

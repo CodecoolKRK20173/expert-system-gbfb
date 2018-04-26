@@ -15,7 +15,9 @@ public abstract class XMLParser {
 
     public void loadXmlDocument(String xmlPath) {
         try {
-            File xmlFile = new File(xmlPath);
+            ClassLoader classLoader = getClass().getClassLoader();
+
+            File xmlFile = new File(classLoader.getResource(xmlPath).getFile());
             DocumentBuilder xmlDocBuilder = DocumentBuilderFactory.newInstance()
                                                                   .newDocumentBuilder();
 
