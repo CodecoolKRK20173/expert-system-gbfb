@@ -1,13 +1,18 @@
 package com.codecool.expertsystem;
 
+import com.codecool.expertsystem.parsers.FactParser;
+import com.codecool.expertsystem.repositories.FactRepository;
+
 /**
  * Hello world!
  *
  */
-public class App 
+public class Main
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        FactParser factParser = new FactParser();
+        FactRepository factRepo = factParser.getFactRepository();
+
     }
 }

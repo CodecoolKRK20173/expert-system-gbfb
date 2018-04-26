@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules>
+    <Rule id="speed">
+        <Question>What speed range are you going to utilize the most (in km/h)?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="180-250"/>
+                <SingleValue value="80-180"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="40-80"/>
+                <SingleValue value="5-40"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="looks">
+        <Question>What should your car look like?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="dignified, state-of-the-art technology achievement, robust"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="a frog, cheap women magnet, midlife crisis"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="reliability">
+        <Question>Can you afford 25 days a month and a lot of money to fix your car?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    <Rule id="janusz">
+        <Question>Do you beat your wife, watch KSW, have a beer belly and a moustache?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+</Rules>
