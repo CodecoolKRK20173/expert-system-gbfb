@@ -1,18 +1,13 @@
 package com.codecool.expertsystem;
 
+import com.codecool.expertsystem.controller.ESProvider;
 import com.codecool.expertsystem.parsers.FactParser;
-import com.codecool.expertsystem.repositories.FactRepository;
+import com.codecool.expertsystem.parsers.RuleParser;
 
-/**
- * Hello world!
- *
- */
-public class Main
-{
-    public static void main( String[] args )
-    {
-        FactParser factParser = new FactParser();
-        FactRepository factRepo = factParser.getFactRepository();
-
+public class Main {
+    public static void main( String[] args ) {
+        ESProvider expertSystem = new ESProvider(new FactParser(), new RuleParser());
+        expertSystem.collectAnswers();
+        expertSystem.evaluate();
     }
 }
