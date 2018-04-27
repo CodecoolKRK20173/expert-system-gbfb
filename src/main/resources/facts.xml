@@ -54,8 +54,8 @@
             <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
-    <Fact id="fabia">
-        <Description value="Skoda Fabia"/>
+    <Fact id="panamera">
+        <Description value="Porsche Panamera"/>
         <Evals>
             <Eval id="looks">true</Eval>
             <Eval id="speed">true</Eval>
@@ -63,8 +63,8 @@
             <Eval id="janusz">true</Eval>
         </Evals>
     </Fact>
-    <Fact id="smart">
-        <Description value="Smart"/>
+    <Fact id="talia">
+        <Description value="Renault Thalia"/>
         <Evals>
             <Eval id="looks">false</Eval>
             <Eval id="speed">false</Eval>
@@ -72,8 +72,8 @@
             <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
-    <Fact id="astra">
-        <Description value="Opel Astra"/>
+    <Fact id="felicia">
+        <Description value="Skoda Felicia"/>
         <Evals>
             <Eval id="looks">false</Eval>
             <Eval id="speed">false</Eval>
@@ -81,8 +81,8 @@
             <Eval id="janusz">true</Eval>
         </Evals>
     </Fact>
-    <Fact id="polo">
-        <Description value="VW Polo"/>
+    <Fact id="lanos">
+        <Description value="Daewoo Lanos"/>
         <Evals>
             <Eval id="looks">false</Eval>
             <Eval id="speed">false</Eval>
@@ -90,8 +90,8 @@
             <Eval id="janusz">true</Eval>
         </Evals>
     </Fact>
-    <Fact id="enzo">
-        <Description value="Ferrari Enzo"/>
+    <Fact id="calibra">
+        <Description value="Opel Calibra"/>
         <Evals>
             <Eval id="looks">false</Eval>
             <Eval id="speed">true</Eval>
@@ -99,8 +99,8 @@
             <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
-    <Fact id="tt">
-        <Description value="Audi TT"/>
+    <Fact id="omega">
+        <Description value="Opel Omega"/>
         <Evals>
             <Eval id="looks">false</Eval>
             <Eval id="speed">true</Eval>
@@ -108,8 +108,8 @@
             <Eval id="janusz">false</Eval>
         </Evals>
     </Fact>
-    <Fact id="punto">
-        <Description value="Fiat Punto"/>
+    <Fact id="qashqai">
+        <Description value="Nissan Qashqai"/>
         <Evals>
             <Eval id="looks">true</Eval>
             <Eval id="speed">false</Eval>
